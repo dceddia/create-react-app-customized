@@ -1,0 +1,22 @@
+{
+  "name": "create-react-app-customized",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "node-sass": "^4.5.2",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "sass-loader": "^6.0.3"
+  },
+  "devDependencies": {
+    "proxyquire": "^1.7.11",
+    "react-scripts": "0.9.5",
+    "rewire": "^2.5.2"
+  },
+  "scripts": {
+    "start": "node scripts/customized-config start",
+    "build": "node scripts/customized-config build",
+    "test": "node scripts/customized-config test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
