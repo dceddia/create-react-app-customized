@@ -1,3 +1,11 @@
+This is a Create React App project with some modifications applied to allow customizing the default Webpack config.
+
+Learn how this works at [the companion blog article](https://daveceddia.com/courses/create-react-app/customize-webpack/).
+
+Out of the box it supports SASS, and requires semicolons (with a custom `.eslintrc`).
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
