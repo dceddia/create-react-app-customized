@@ -64,9 +64,10 @@ function rewireModule(modulePath, customizer) {
   let defaults = rewire(modulePath);
 
   // Reach into the module, grab its global 'config' variable,
-  // pass it through the customizer function, and then set it back.
-  // 'config' is Create React App's built-in Webpack config.
+  // and pass it through the customizer function.
+  // The customizer should *mutate* the config object, because
+  // react-scripts imports the config as a `const` and we can't
+  // modify that reference.
   let config = defaults.__get__('config');
-  config = customizer(Object.assign({}, config));
-  defaults.__set__('config', config);
+  customizer(Object.assign({}, config));
 }
