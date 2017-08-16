@@ -1,14 +1,14 @@
 /*
   This module runs the scripts from react-scripts (Create React App)
   and gives an opportunity to override the Webpack config by creating
-  a "config-overrides.dev.js" or "config-overrides.prod.js" file in the
+  "config-overrides.dev.js" and/or "config-overrides.prod.js" files in the
   root of the project.
 
-  The config-override file should export a single function that takes a
-  config and returns the modified config, like this:
+  A config-overrides file should export a single function that takes a
+  config and modifies it as necessary.
 
   module.exports = function(webpackConfig) {
-    return webpackConfig;
+    webpackConfig.module.rules[0].use[0].options.useEslintrc = true;
   };
 */
 var rewire = require('rewire');
@@ -69,5 +69,5 @@ function rewireModule(modulePath, customizer) {
   // react-scripts imports the config as a `const` and we can't
   // modify that reference.
   let config = defaults.__get__('config');
-  customizer(Object.assign({}, config));
+  customizer(config);
 }
